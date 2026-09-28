@@ -1,0 +1,85 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+@layer base {
+
+    /* Form input base styles */
+    [type='text'],
+    [type='email'],
+    [type='url'],
+    [type='password'],
+    [type='number'],
+    [type='date'],
+    [type='datetime-local'],
+    [type='month'],
+    [type='search'],
+    [type='tel'],
+    [type='time'],
+    [type='week'],
+    select,
+    textarea {
+        appearance: none;
+        background-color: transparent;
+        border-width: 1px;
+        padding: 0.5rem 0.75rem;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+    }
+
+    [type='text']:focus,
+    [type='email']:focus,
+    [type='url']:focus,
+    [type='password']:focus,
+    [type='number']:focus,
+    [type='date']:focus,
+    [type='datetime-local']:focus,
+    [type='month']:focus,
+    [type='search']:focus,
+    [type='tel']:focus,
+    [type='time']:focus,
+    [type='week']:focus,
+    select:focus,
+    textarea:focus {
+        outline: none;
+        --tw-ring-color: var(--color-indigo-500);
+        box-shadow: 0 0 0 2px var(--tw-ring-color);
+    }
+
+    [type='checkbox'],
+    [type='radio'] {
+        appearance: none;
+        padding: 0;
+        display: inline-block;
+        vertical-align: middle;
+        user-select: none;
+        flex-shrink: 0;
+        height: 1rem;
+        width: 1rem;
+        border-width: 1px;
+    }
+
+    [type='checkbox'] {
+        border-radius: 0.25rem;
+    }
+
+    [type='radio'] {
+        border-radius: 100%;
+    }
+
+    [type='checkbox']:checked,
+    [type='radio']:checked {
+        background-color: currentColor;
+        border-color: transparent;
+    }
+}

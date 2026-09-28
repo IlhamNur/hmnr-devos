@@ -1,0 +1,8 @@
+#!/bin/bash
+# Wrapper to run php with SQLite extension loaded
+# Usage: ./php-ext php artisan migrate
+exec php \
+    -d "extension=/tmp/sqlite3-ext/usr/lib/php/20230831/sqlite3.so" \
+    -d "extension=/tmp/sqlite3-ext/usr/lib/php/20230831/pdo_sqlite.so" \
+    "$@"
+
